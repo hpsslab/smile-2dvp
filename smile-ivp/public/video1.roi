@@ -1,0 +1,36 @@
+{
+  "frames": [
+    {
+      "start-time": 0,
+      "end-time": 10,
+      "objects": [
+        {
+          "object-id": "12345",
+          "annotation": "ALD device",
+          "geometry": {
+            "x": 150,
+            "y": 100,
+            "width": 250,
+            "height": 250
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 10,
+      "end-time": 20,
+      "objects": [
+        {
+          "object-id": "12345",
+          "annotation": "ALD device",
+          "geometry": {
+            "x": 200,
+            "y": 150,
+            "width": 300,
+            "height": 300
+          }
+        }
+      ]
+    }
+  ]
+} 

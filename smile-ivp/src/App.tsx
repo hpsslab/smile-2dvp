@@ -16,6 +16,7 @@ function App() {
   const [popupOpen, setPopupOpen] = useState(false);
   const [popupContent, setPopupContent] = useState('');
   const [popupTitle, setPopupTitle] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     // Load the M3U playlist
@@ -37,18 +38,30 @@ function App() {
       .catch(error => console.error('Error loading playlist:', error));
   }, []);
 
-  const handleROIClick = (object: ROIObject) => {
-    // In a real application, you would fetch the HTML content from a server
-    // For now, we'll just show a placeholder
+  const handleROIClick = async (object: ROIObject) => {
     setPopupTitle(object.annotation);
-    setPopupContent(`
-      <div style="padding: 20px;">
-        <h2>${object.annotation}</h2>
-        <p>Object ID: ${object['object-id']}</p>
-        <p>This is a placeholder for the actual HTML content that would be displayed when clicking on this ROI.</p>
-      </div>
-    `);
+    setIsLoading(true);
     setPopupOpen(true);
+
+    try {
+      const response = await fetch(object.infoURL);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const content = await response.text();
+      setPopupContent(content);
+    } catch (error) {
+      console.error('Error fetching ROI content:', error);
+      setPopupContent(`
+        <div style="padding: 20px;">
+          <h2>Error Loading Content</h2>
+          <p>Sorry, we couldn't load the content for ${object.annotation}.</p>
+          <p>URL: ${object.infoURL}</p>
+        </div>
+      `);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -67,6 +80,7 @@ function App() {
           onClose={() => setPopupOpen(false)}
           title={popupTitle}
           content={popupContent}
+          isLoading={isLoading}
         />
       </Container>
     </ThemeProvider>

@@ -7,6 +7,7 @@
         {
           "object-id": "12345",
           "annotation": "ALD device",
+          "infoURL": "https://hpss.mines.edu/ald-device-info.html",
           "geometry": {
             "x": 150,
             "y": 100,
@@ -23,6 +24,7 @@
         {
           "object-id": "12345",
           "annotation": "ALD device",
+          "infoURL": "https://hpss.mines.edu/ald-device-info.html",
           "geometry": {
             "x": 200,
             "y": 150,

@@ -8,6 +8,7 @@ export interface Geometry {
 export interface ROIObject {
   'object-id': string;
   annotation: string;
+  infoURL: string;
   geometry: Geometry;
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dialog, DialogTitle, DialogContent, IconButton, Box } from '@mui/material';
+import { Dialog, DialogTitle, DialogContent, IconButton, Box, CircularProgress } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
 interface PopupDialogProps {
@@ -7,9 +7,10 @@ interface PopupDialogProps {
   onClose: () => void;
   title: string;
   content: string;
+  isLoading: boolean;
 }
 
-const PopupDialog: React.FC<PopupDialogProps> = ({ open, onClose, title, content }) => {
+const PopupDialog: React.FC<PopupDialogProps> = ({ open, onClose, title, content, isLoading }) => {
   return (
     <Dialog
       open={open}
@@ -37,18 +38,24 @@ const PopupDialog: React.FC<PopupDialogProps> = ({ open, onClose, title, content
         </Box>
       </DialogTitle>
       <DialogContent dividers>
-        <Box
-          sx={{
-            height: '60vh',
-            overflow: 'auto',
-            '& iframe': {
-              width: '100%',
-              height: '100%',
-              border: 'none',
-            }
-          }}
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+        {isLoading ? (
+          <Box display="flex" justifyContent="center" alignItems="center" minHeight="200px">
+            <CircularProgress />
+          </Box>
+        ) : (
+          <Box
+            sx={{
+              height: '60vh',
+              overflow: 'auto',
+              '& iframe': {
+                width: '100%',
+                height: '100%',
+                border: 'none',
+              }
+            }}
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+        )}
       </DialogContent>
     </Dialog>
   );

@@ -41,59 +41,73 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ url, roiData, onROIClick }) =
   };
 
   return (
-    <Box sx={{ position: 'relative', width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
-      <ReactPlayer
-        ref={playerRef}
-        url={url}
-        width="100%"
-        height="auto"
-        playing={playing}
-        onProgress={handleProgress}
-        onPlay={handlePlay}
-        onPause={handlePause}
-        controls
-      />
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          pointerEvents: 'none'
-        }}
-      >
-        {currentROIs.map((roi) => (
-          <Box
-            key={roi['object-id']}
-            sx={{
-              position: 'absolute',
-              left: roi.geometry.x,
-              top: roi.geometry.y,
-              width: roi.geometry.width,
-              height: roi.geometry.height,
-              // border: '2px solid red',
-              border: 'none',
-              pointerEvents: 'auto',
-              cursor: 'pointer'
-            }}
-            onClick={() => handleROIClick(roi)}
-          >
-            {/* <Paper
+    <Box sx={{ 
+      position: 'relative', 
+      width: '100%', 
+      maxWidth: '1280px', 
+      margin: '0 auto',
+      display: 'flex',
+      justifyContent: 'center'
+    }}>
+      <Box sx={{ 
+        position: 'relative',
+        width: '1280px',
+        height: '720px',
+        maxWidth: '100%'
+      }}>
+        <ReactPlayer
+          ref={playerRef}
+          url={url}
+          width="100%"
+          height="100%"
+          playing={playing}
+          onProgress={handleProgress}
+          onPlay={handlePlay}
+          onPause={handlePause}
+          controls
+          style={{ maxWidth: '100%' }}
+        />
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            pointerEvents: 'none'
+          }}
+        >
+          {currentROIs.map((roi) => (
+            <Box
+              key={roi['object-id']}
               sx={{
                 position: 'absolute',
-                top: -25,
-                left: 0,
-                padding: '2px 8px',
-                backgroundColor: 'rgba(255, 0, 0, 0.8)',
-                color: 'white',
-                zIndex: 1,
+                left: roi.geometry.x,
+                top: roi.geometry.y,
+                width: roi.geometry.width,
+                height: roi.geometry.height,
+                border: '2px solid red',
+                pointerEvents: 'auto',
+                cursor: 'pointer'
               }}
+              onClick={() => handleROIClick(roi)}
             >
-              <Typography variant="caption">{roi.annotation}</Typography>
-            </Paper> */}
-          </Box>
-        ))}
+              <Paper
+                sx={{
+                  position: 'absolute',
+                  top: -25,
+                  left: 0,
+                  padding: '2px 8px',
+                  backgroundColor: 'rgba(255, 0, 0, 0.8)',
+                  color: 'white',
+                  zIndex: 1,
+                }}
+              >
+                <Typography variant="caption">{roi.annotation}</Typography>
+              </Paper>
+            </Box>
+          ))}
+        </Box>
       </Box>
     </Box>
   );

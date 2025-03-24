@@ -19,7 +19,7 @@ const PopupDialog: React.FC<PopupDialogProps> = ({ open, onClose, title, content
       fullWidth
       PaperProps={{
         sx: {
-          backgroundColor: 'rgba(255, 255, 255, 0.9)',
+          backgroundColor: 'rgba(0, 0, 0, 0.9)',
           backdropFilter: 'blur(10px)',
         }
       }}

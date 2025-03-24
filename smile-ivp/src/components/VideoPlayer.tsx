@@ -12,6 +12,7 @@ interface VideoPlayerProps {
 const VideoPlayer: React.FC<VideoPlayerProps> = ({ url, roiData, onROIClick }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [currentROIs, setCurrentROIs] = useState<ROIObject[]>([]);
+  const [playing, setPlaying] = useState(false);
   const playerRef = useRef<ReactPlayer>(null);
 
   useEffect(() => {
@@ -27,7 +28,16 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ url, roiData, onROIClick }) =
   };
 
   const handleROIClick = (object: ROIObject) => {
+    setPlaying(false);
     onROIClick(object);
+  };
+
+  const handlePlay = () => {
+    setPlaying(true);
+  };
+
+  const handlePause = () => {
+    setPlaying(false);
   };
 
   return (
@@ -37,7 +47,10 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ url, roiData, onROIClick }) =
         url={url}
         width="100%"
         height="auto"
+        playing={playing}
         onProgress={handleProgress}
+        onPlay={handlePlay}
+        onPause={handlePause}
         controls
       />
       <Box
@@ -59,13 +72,14 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ url, roiData, onROIClick }) =
               top: roi.geometry.y,
               width: roi.geometry.width,
               height: roi.geometry.height,
-              border: '2px solid red',
+              // border: '2px solid red',
+              border: 'none',
               pointerEvents: 'auto',
               cursor: 'pointer'
             }}
             onClick={() => handleROIClick(roi)}
           >
-            <Paper
+            {/* <Paper
               sx={{
                 position: 'absolute',
                 top: -25,
@@ -77,7 +91,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ url, roiData, onROIClick }) =
               }}
             >
               <Typography variant="caption">{roi.annotation}</Typography>
-            </Paper>
+            </Paper> */}
           </Box>
         ))}
       </Box>

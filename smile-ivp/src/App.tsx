@@ -36,7 +36,8 @@ function App() {
           setCurrentVideo(trimmedUrl);
           
           // Load corresponding ROI file
-          const roiUrl = trimmedUrl.replace('.mp4', '.roi');
+          // const roiUrl = trimmedUrl.replace('.mp4', '.roi');
+          const roiUrl = "https://hpss.mines.edu/smile/smile.roi"
           console.log('Loading ROI file from:', roiUrl);
           
           fetch(roiUrl)

@@ -18,7 +18,8 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ url, roiData, onROIClick }) =
   useEffect(() => {
     // Find ROIs for current time
     const currentFrame = roiData.frames.find(
-      frame => currentTime >= frame['start-time'] && currentTime <= frame['end-time']
+      frame => currentTime >= frame['start-time']*1.03 && currentTime <= frame['end-time']*1.03
+      // frame => currentTime >= frame['start-time']*1 && currentTime <= frame['end-time']*1
     );
     setCurrentROIs(currentFrame?.objects || []);
   }, [currentTime, roiData]);
@@ -65,6 +66,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ url, roiData, onROIClick }) =
           onPlay={handlePlay}
           onPause={handlePause}
           controls
+          progressInterval={10}
           style={{ maxWidth: '100%' }}
         />
         <Box
@@ -86,7 +88,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ url, roiData, onROIClick }) =
                 top: roi.geometry.y,
                 width: roi.geometry.width,
                 height: roi.geometry.height,
-                border: '2px solid red',
+                // border: '2px solid red',
                 pointerEvents: 'auto',
                 cursor: 'pointer'
               }}
@@ -98,12 +100,12 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ url, roiData, onROIClick }) =
                   top: -25,
                   left: 0,
                   padding: '2px 8px',
-                  backgroundColor: 'rgba(255, 0, 0, 0.8)',
+                  backgroundColor: 'rgba(255, 0, 0, 0)',
                   color: 'white',
                   zIndex: 1,
                 }}
               >
-                <Typography variant="caption">{roi.annotation}</Typography>
+                {/* <Typography variant="caption">{roi.annotation}</Typography> */}
               </Paper>
             </Box>
           ))}

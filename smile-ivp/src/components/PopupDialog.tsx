@@ -19,12 +19,17 @@ const PopupDialog: React.FC<PopupDialogProps> = ({ open, onClose, title, content
       fullWidth
       PaperProps={{
         sx: {
-          backgroundColor: 'rgba(0, 0, 0, 0.9)',
-          backdropFilter: 'blur(10px)',
+          backgroundColor: 'rgb(255, 255, 255)',
+          backdropFilter: 'blur(25px)',
+          position: 'fixed',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          margin: 0,
+          maxHeight: '80vh'
         }
       }}
     >
-      <DialogTitle>
+      {/* <DialogTitle>
         <Box display="flex" alignItems="center" justifyContent="space-between">
           {title}
           <IconButton
@@ -36,7 +41,7 @@ const PopupDialog: React.FC<PopupDialogProps> = ({ open, onClose, title, content
             <CloseIcon />
           </IconButton>
         </Box>
-      </DialogTitle>
+      </DialogTitle> */}
       <DialogContent dividers>
         {isLoading ? (
           <Box display="flex" justifyContent="center" alignItems="center" minHeight="200px">
@@ -47,11 +52,13 @@ const PopupDialog: React.FC<PopupDialogProps> = ({ open, onClose, title, content
             sx={{
               height: '60vh',
               overflow: 'auto',
+              padding: '0 20px',
               '& iframe': {
                 width: '100%',
                 height: '100%',
                 border: 'none',
-              }
+              },
+              color:'rgb(0, 0, 0)'
             }}
             dangerouslySetInnerHTML={{ __html: content }}
           />

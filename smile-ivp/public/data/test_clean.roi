@@ -1,0 +1,2397 @@
+{
+  "meta": {
+    "display_width": 1280,
+    "display_height": 720,
+    "fps": 60.0,
+    "bin_size": 0.1
+  },
+  "frames": [
+    {
+      "start-time": 0.0,
+      "end-time": 0.1,
+      "objects": [
+        {
+          "object-id": "EBL_control_000000",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 770.3,
+            "y": 109.4,
+            "width": 504.5,
+            "height": 501.1
+          }
+        },
+        {
+          "object-id": "EBL_a_000001",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 639.4,
+            "y": 445.9,
+            "width": 278.1,
+            "height": 274.1
+          }
+        },
+        {
+          "object-id": "EBL_000002",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 340.5,
+            "y": 76.1,
+            "width": 582.0,
+            "height": 643.1
+          }
+        },
+        {
+          "object-id": "monitor_000003",
+          "annotation": "monitor",
+          "infoURL": "/data/info/monitor.html",
+          "geometry": {
+            "x": 1129.9,
+            "y": 259.3,
+            "width": 77.5,
+            "height": 102.9
+          }
+        },
+        {
+          "object-id": "EBL_b_000004",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 570.6,
+            "y": 78.6,
+            "width": 141.1,
+            "height": 284.2
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 0.1,
+      "end-time": 0.2,
+      "objects": [
+        {
+          "object-id": "EBL_control_000031",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 770.6,
+            "y": 104.7,
+            "width": 504.6,
+            "height": 510.4
+          }
+        },
+        {
+          "object-id": "EBL_a_000032",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 636.4,
+            "y": 447.4,
+            "width": 279.6,
+            "height": 272.6
+          }
+        },
+        {
+          "object-id": "EBL_000033",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 336.8,
+            "y": 75.3,
+            "width": 584.7,
+            "height": 644.1
+          }
+        },
+        {
+          "object-id": "monitor_000034",
+          "annotation": "monitor",
+          "infoURL": "/data/info/monitor.html",
+          "geometry": {
+            "x": 1130.9,
+            "y": 260.6,
+            "width": 79.3,
+            "height": 105.0
+          }
+        },
+        {
+          "object-id": "EBL_b_000035",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 568.0,
+            "y": 77.8,
+            "width": 141.1,
+            "height": 287.1
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 0.2,
+      "end-time": 0.3,
+      "objects": [
+        {
+          "object-id": "EBL_control_000063",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 770.2,
+            "y": 107.5,
+            "width": 507.4,
+            "height": 509.0
+          }
+        },
+        {
+          "object-id": "EBL_a_000064",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 632.6,
+            "y": 448.8,
+            "width": 281.4,
+            "height": 271.2
+          }
+        },
+        {
+          "object-id": "EBL_000065",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 333.0,
+            "y": 74.3,
+            "width": 584.3,
+            "height": 645.1
+          }
+        },
+        {
+          "object-id": "monitor_000066",
+          "annotation": "monitor",
+          "infoURL": "/data/info/monitor.html",
+          "geometry": {
+            "x": 1132.8,
+            "y": 260.2,
+            "width": 82.1,
+            "height": 106.7
+          }
+        },
+        {
+          "object-id": "EBL_b_000067",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 564.7,
+            "y": 76.3,
+            "width": 141.7,
+            "height": 289.1
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 0.3,
+      "end-time": 0.4,
+      "objects": [
+        {
+          "object-id": "EBL_control_000099",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 769.8,
+            "y": 100.7,
+            "width": 507.9,
+            "height": 519.2
+          }
+        },
+        {
+          "object-id": "EBL_a_000100",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 629.0,
+            "y": 452.0,
+            "width": 284.1,
+            "height": 268.0
+          }
+        },
+        {
+          "object-id": "EBL_000101",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 329.4,
+            "y": 72.0,
+            "width": 586.3,
+            "height": 647.3
+          }
+        },
+        {
+          "object-id": "monitor_000102",
+          "annotation": "monitor",
+          "infoURL": "/data/info/monitor.html",
+          "geometry": {
+            "x": 1136.3,
+            "y": 259.4,
+            "width": 80.6,
+            "height": 108.1
+          }
+        },
+        {
+          "object-id": "EBL_b_000103",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 558.8,
+            "y": 72.9,
+            "width": 145.6,
+            "height": 293.0
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 0.4,
+      "end-time": 0.5,
+      "objects": [
+        {
+          "object-id": "EBL_control_000124",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 770.9,
+            "y": 99.6,
+            "width": 507.4,
+            "height": 524.2
+          }
+        },
+        {
+          "object-id": "EBL_a_000125",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 625.0,
+            "y": 454.4,
+            "width": 289.8,
+            "height": 265.6
+          }
+        },
+        {
+          "object-id": "EBL_000126",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 325.6,
+            "y": 69.5,
+            "width": 592.6,
+            "height": 649.7
+          }
+        },
+        {
+          "object-id": "monitor_000127",
+          "annotation": "monitor",
+          "infoURL": "/data/info/monitor.html",
+          "geometry": {
+            "x": 1140.6,
+            "y": 259.6,
+            "width": 80.8,
+            "height": 109.4
+          }
+        },
+        {
+          "object-id": "EBL_b_000128",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 557.6,
+            "y": 69.8,
+            "width": 147.2,
+            "height": 294.9
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 0.5,
+      "end-time": 0.6,
+      "objects": [
+        {
+          "object-id": "EBL_control_000154",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 770.9,
+            "y": 96.8,
+            "width": 508.5,
+            "height": 531.5
+          }
+        },
+        {
+          "object-id": "EBL_a_000155",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 623.7,
+            "y": 455.9,
+            "width": 292.6,
+            "height": 264.1
+          }
+        },
+        {
+          "object-id": "EBL_000156",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 321.2,
+            "y": 65.0,
+            "width": 598.1,
+            "height": 653.8
+          }
+        },
+        {
+          "object-id": "monitor_000157",
+          "annotation": "monitor",
+          "infoURL": "/data/info/monitor.html",
+          "geometry": {
+            "x": 1146.1,
+            "y": 261.6,
+            "width": 82.0,
+            "height": 106.0
+          }
+        },
+        {
+          "object-id": "EBL_b_000158",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 556.5,
+            "y": 64.8,
+            "width": 147.2,
+            "height": 300.9
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 0.6,
+      "end-time": 0.7,
+      "objects": [
+        {
+          "object-id": "EBL_control_000189",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 773.5,
+            "y": 90.1,
+            "width": 506.0,
+            "height": 540.6
+          }
+        },
+        {
+          "object-id": "EBL_000190",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 315.0,
+            "y": 62.2,
+            "width": 606.9,
+            "height": 656.4
+          }
+        },
+        {
+          "object-id": "EBL_a_000191",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 622.9,
+            "y": 457.7,
+            "width": 295.5,
+            "height": 262.3
+          }
+        },
+        {
+          "object-id": "monitor_000192",
+          "annotation": "monitor",
+          "infoURL": "/data/info/monitor.html",
+          "geometry": {
+            "x": 1153.1,
+            "y": 259.0,
+            "width": 84.7,
+            "height": 110.3
+          }
+        },
+        {
+          "object-id": "EBL_b_000193",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 555.2,
+            "y": 61.2,
+            "width": 148.9,
+            "height": 304.7
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 0.7,
+      "end-time": 0.8,
+      "objects": [
+        {
+          "object-id": "EBL_control_000219",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 777.1,
+            "y": 84.1,
+            "width": 502.3,
+            "height": 550.6
+          }
+        },
+        {
+          "object-id": "EBL_000220",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 307.4,
+            "y": 56.4,
+            "width": 615.5,
+            "height": 662.4
+          }
+        },
+        {
+          "object-id": "EBL_a_000221",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 619.6,
+            "y": 458.4,
+            "width": 300.7,
+            "height": 261.6
+          }
+        },
+        {
+          "object-id": "EBL_b_000222",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 553.0,
+            "y": 54.7,
+            "width": 152.3,
+            "height": 310.6
+          }
+        },
+        {
+          "object-id": "monitor_000223",
+          "annotation": "monitor",
+          "infoURL": "/data/info/monitor.html",
+          "geometry": {
+            "x": 1161.8,
+            "y": 257.6,
+            "width": 87.2,
+            "height": 112.4
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 0.8,
+      "end-time": 0.9,
+      "objects": [
+        {
+          "object-id": "EBL_control_000244",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 781.0,
+            "y": 80.9,
+            "width": 498.2,
+            "height": 556.9
+          }
+        },
+        {
+          "object-id": "EBL_000245",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 304.2,
+            "y": 52.0,
+            "width": 620.9,
+            "height": 667.0
+          }
+        },
+        {
+          "object-id": "EBL_a_000246",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 617.5,
+            "y": 459.4,
+            "width": 305.0,
+            "height": 260.6
+          }
+        },
+        {
+          "object-id": "EBL_b_000247",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 551.8,
+            "y": 50.6,
+            "width": 153.8,
+            "height": 313.3
+          }
+        },
+        {
+          "object-id": "monitor_000248",
+          "annotation": "monitor",
+          "infoURL": "/data/info/monitor.html",
+          "geometry": {
+            "x": 1169.1,
+            "y": 257.5,
+            "width": 86.8,
+            "height": 114.2
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 0.9,
+      "end-time": 1.0,
+      "objects": [
+        {
+          "object-id": "EBL_control_000274",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 781.5,
+            "y": 79.5,
+            "width": 497.8,
+            "height": 559.9
+          }
+        },
+        {
+          "object-id": "EBL_000275",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 294.7,
+            "y": 47.4,
+            "width": 629.2,
+            "height": 672.0
+          }
+        },
+        {
+          "object-id": "EBL_a_000276",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 616.1,
+            "y": 461.5,
+            "width": 303.0,
+            "height": 258.5
+          }
+        },
+        {
+          "object-id": "monitor_000277",
+          "annotation": "monitor",
+          "infoURL": "/data/info/monitor.html",
+          "geometry": {
+            "x": 1180.0,
+            "y": 257.3,
+            "width": 93.0,
+            "height": 113.9
+          }
+        },
+        {
+          "object-id": "EBL_b_000278",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 551.3,
+            "y": 46.4,
+            "width": 153.4,
+            "height": 316.6
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 1.0,
+      "end-time": 1.1,
+      "objects": [
+        {
+          "object-id": "EBL_control_000304",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 785.5,
+            "y": 70.7,
+            "width": 494.0,
+            "height": 572.3
+          }
+        },
+        {
+          "object-id": "EBL_000305",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 296.3,
+            "y": 43.7,
+            "width": 620.4,
+            "height": 676.2
+          }
+        },
+        {
+          "object-id": "EBL_a_000306",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 615.2,
+            "y": 461.7,
+            "width": 297.4,
+            "height": 258.3
+          }
+        },
+        {
+          "object-id": "monitor_000307",
+          "annotation": "monitor",
+          "infoURL": "/data/info/monitor.html",
+          "geometry": {
+            "x": 1191.9,
+            "y": 256.4,
+            "width": 88.1,
+            "height": 118.5
+          }
+        },
+        {
+          "object-id": "EBL_b_000308",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 552.4,
+            "y": 43.4,
+            "width": 156.4,
+            "height": 320.8
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 1.1,
+      "end-time": 1.2,
+      "objects": [
+        {
+          "object-id": "EBL_000334",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 294.3,
+            "y": 39.2,
+            "width": 622.7,
+            "height": 680.8
+          }
+        },
+        {
+          "object-id": "EBL_a_000335",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 615.9,
+            "y": 461.5,
+            "width": 295.5,
+            "height": 258.5
+          }
+        },
+        {
+          "object-id": "monitor_000336",
+          "annotation": "monitor",
+          "infoURL": "/data/info/monitor.html",
+          "geometry": {
+            "x": 1205.4,
+            "y": 257.1,
+            "width": 74.6,
+            "height": 117.5
+          }
+        },
+        {
+          "object-id": "EBL_b_000337",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 556.3,
+            "y": 39.1,
+            "width": 155.6,
+            "height": 323.5
+          }
+        },
+        {
+          "object-id": "EBL_control_000338",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 789.6,
+            "y": 66.5,
+            "width": 489.7,
+            "height": 578.6
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 1.2,
+      "end-time": 1.3,
+      "objects": [
+        {
+          "object-id": "EBL_control_000370",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 796.4,
+            "y": 63.0,
+            "width": 483.6,
+            "height": 583.9
+          }
+        },
+        {
+          "object-id": "EBL_000371",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 294.7,
+            "y": 34.6,
+            "width": 624.8,
+            "height": 685.1
+          }
+        },
+        {
+          "object-id": "EBL_a_000372",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 615.9,
+            "y": 460.3,
+            "width": 298.5,
+            "height": 259.7
+          }
+        },
+        {
+          "object-id": "monitor_000373",
+          "annotation": "monitor",
+          "infoURL": "/data/info/monitor.html",
+          "geometry": {
+            "x": 1221.5,
+            "y": 254.9,
+            "width": 58.5,
+            "height": 123.6
+          }
+        },
+        {
+          "object-id": "EBL_b_000374",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 559.9,
+            "y": 34.3,
+            "width": 156.2,
+            "height": 325.6
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 1.3,
+      "end-time": 1.4,
+      "objects": [
+        {
+          "object-id": "EBL_control_000395",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 803.1,
+            "y": 58.2,
+            "width": 476.9,
+            "height": 589.5
+          }
+        },
+        {
+          "object-id": "EBL_000396",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 294.2,
+            "y": 30.0,
+            "width": 626.6,
+            "height": 689.7
+          }
+        },
+        {
+          "object-id": "EBL_a_000397",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 616.6,
+            "y": 459.6,
+            "width": 298.9,
+            "height": 260.4
+          }
+        },
+        {
+          "object-id": "EBL_b_000398",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 562.1,
+            "y": 29.9,
+            "width": 159.3,
+            "height": 329.3
+          }
+        },
+        {
+          "object-id": "monitor_000402",
+          "annotation": "monitor",
+          "infoURL": "/data/info/monitor.html",
+          "geometry": {
+            "x": 1235.4,
+            "y": 255.0,
+            "width": 44.6,
+            "height": 124.3
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 1.4,
+      "end-time": 1.5,
+      "objects": [
+        {
+          "object-id": "EBL_control_000430",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 813.3,
+            "y": 49.7,
+            "width": 466.7,
+            "height": 599.6
+          }
+        },
+        {
+          "object-id": "EBL_000431",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 295.2,
+            "y": 22.8,
+            "width": 625.7,
+            "height": 697.0
+          }
+        },
+        {
+          "object-id": "EBL_a_000432",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 618.7,
+            "y": 458.3,
+            "width": 293.9,
+            "height": 261.7
+          }
+        },
+        {
+          "object-id": "EBL_b_000433",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 565.7,
+            "y": 23.7,
+            "width": 160.3,
+            "height": 331.7
+          }
+        },
+        {
+          "object-id": "monitor_000434",
+          "annotation": "monitor",
+          "infoURL": "/data/info/monitor.html",
+          "geometry": {
+            "x": 1251.6,
+            "y": 263.7,
+            "width": 28.4,
+            "height": 115.9
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 1.5,
+      "end-time": 1.6,
+      "objects": [
+        {
+          "object-id": "EBL_control_000452",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 816.9,
+            "y": 45.9,
+            "width": 463.1,
+            "height": 605.5
+          }
+        },
+        {
+          "object-id": "EBL_000453",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 295.7,
+            "y": 19.1,
+            "width": 622.1,
+            "height": 700.8
+          }
+        },
+        {
+          "object-id": "EBL_a_000454",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 623.3,
+            "y": 457.5,
+            "width": 285.3,
+            "height": 262.5
+          }
+        },
+        {
+          "object-id": "EBL_b_000455",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 566.0,
+            "y": 21.5,
+            "width": 161.9,
+            "height": 333.2
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 1.6,
+      "end-time": 1.7,
+      "objects": [
+        {
+          "object-id": "EBL_control_000476",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 819.8,
+            "y": 43.2,
+            "width": 460.2,
+            "height": 611.4
+          }
+        },
+        {
+          "object-id": "EBL_000477",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 294.1,
+            "y": 18.0,
+            "width": 619.5,
+            "height": 702.0
+          }
+        },
+        {
+          "object-id": "EBL_a_000478",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 622.5,
+            "y": 457.6,
+            "width": 281.4,
+            "height": 262.4
+          }
+        },
+        {
+          "object-id": "EBL_b_000479",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 566.7,
+            "y": 21.1,
+            "width": 161.9,
+            "height": 332.7
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 1.7,
+      "end-time": 1.8,
+      "objects": [
+        {
+          "object-id": "EBL_control_000500",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 824.4,
+            "y": 38.8,
+            "width": 455.6,
+            "height": 617.3
+          }
+        },
+        {
+          "object-id": "EBL_000501",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 290.8,
+            "y": 16.4,
+            "width": 624.4,
+            "height": 703.6
+          }
+        },
+        {
+          "object-id": "EBL_a_000502",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 622.0,
+            "y": 458.3,
+            "width": 278.1,
+            "height": 261.7
+          }
+        },
+        {
+          "object-id": "EBL_b_000503",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 568.4,
+            "y": 19.7,
+            "width": 162.1,
+            "height": 334.7
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 1.8,
+      "end-time": 1.9,
+      "objects": [
+        {
+          "object-id": "EBL_control_000524",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 827.5,
+            "y": 33.6,
+            "width": 452.5,
+            "height": 624.2
+          }
+        },
+        {
+          "object-id": "EBL_000525",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 287.9,
+            "y": 16.6,
+            "width": 627.0,
+            "height": 703.4
+          }
+        },
+        {
+          "object-id": "EBL_a_000526",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 620.5,
+            "y": 459.8,
+            "width": 271.7,
+            "height": 260.2
+          }
+        },
+        {
+          "object-id": "EBL_b_000527",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 571.5,
+            "y": 18.7,
+            "width": 161.6,
+            "height": 338.7
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 1.9,
+      "end-time": 2.0,
+      "objects": [
+        {
+          "object-id": "EBL_control_000552",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 835.2,
+            "y": 28.5,
+            "width": 444.8,
+            "height": 633.7
+          }
+        },
+        {
+          "object-id": "EBL_000553",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 282.6,
+            "y": 15.6,
+            "width": 633.7,
+            "height": 704.4
+          }
+        },
+        {
+          "object-id": "EBL_b_000554",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 574.7,
+            "y": 18.1,
+            "width": 163.1,
+            "height": 340.0
+          }
+        },
+        {
+          "object-id": "EBL_a_000555",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 618.9,
+            "y": 460.0,
+            "width": 270.7,
+            "height": 259.7
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 2.0,
+      "end-time": 2.1,
+      "objects": [
+        {
+          "object-id": "EBL_control_000572",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 841.3,
+            "y": 34.8,
+            "width": 438.7,
+            "height": 630.7
+          }
+        },
+        {
+          "object-id": "EBL_000573",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 287.6,
+            "y": 14.4,
+            "width": 629.2,
+            "height": 705.6
+          }
+        },
+        {
+          "object-id": "EBL_b_000574",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 577.4,
+            "y": 16.4,
+            "width": 165.2,
+            "height": 340.1
+          }
+        },
+        {
+          "object-id": "EBL_a_000575",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 619.0,
+            "y": 459.4,
+            "width": 276.9,
+            "height": 260.3
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 2.1,
+      "end-time": 2.2,
+      "objects": [
+        {
+          "object-id": "EBL_control_000596",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 845.7,
+            "y": 25.5,
+            "width": 434.3,
+            "height": 644.8
+          }
+        },
+        {
+          "object-id": "EBL_000597",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 289.8,
+            "y": 12.9,
+            "width": 633.9,
+            "height": 707.1
+          }
+        },
+        {
+          "object-id": "EBL_b_000598",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 580.6,
+            "y": 15.4,
+            "width": 161.8,
+            "height": 341.4
+          }
+        },
+        {
+          "object-id": "EBL_a_000599",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 617.4,
+            "y": 462.2,
+            "width": 264.8,
+            "height": 257.5
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 2.2,
+      "end-time": 2.3,
+      "objects": [
+        {
+          "object-id": "EBL_control_000620",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 850.5,
+            "y": 22.4,
+            "width": 429.5,
+            "height": 652.8
+          }
+        },
+        {
+          "object-id": "EBL_000621",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 297.3,
+            "y": 12.2,
+            "width": 632.3,
+            "height": 707.8
+          }
+        },
+        {
+          "object-id": "EBL_b_000622",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 587.3,
+            "y": 14.8,
+            "width": 161.5,
+            "height": 342.8
+          }
+        },
+        {
+          "object-id": "EBL_a_000623",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 616.3,
+            "y": 462.8,
+            "width": 276.7,
+            "height": 256.9
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 2.3,
+      "end-time": 2.4,
+      "objects": [
+        {
+          "object-id": "EBL_control_000648",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 854.3,
+            "y": 20.1,
+            "width": 425.7,
+            "height": 660.3
+          }
+        },
+        {
+          "object-id": "EBL_000649",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 292.2,
+            "y": 7.2,
+            "width": 640.0,
+            "height": 712.8
+          }
+        },
+        {
+          "object-id": "EBL_b_000650",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 589.1,
+            "y": 10.3,
+            "width": 167.0,
+            "height": 348.2
+          }
+        },
+        {
+          "object-id": "EBL_a_000651",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 613.7,
+            "y": 468.1,
+            "width": 258.4,
+            "height": 251.8
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 2.4,
+      "end-time": 2.5,
+      "objects": [
+        {
+          "object-id": "EBL_control_000672",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 858.6,
+            "y": 22.5,
+            "width": 421.3,
+            "height": 660.9
+          }
+        },
+        {
+          "object-id": "EBL_b_000673",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 589.3,
+            "y": 6.5,
+            "width": 167.5,
+            "height": 350.3
+          }
+        },
+        {
+          "object-id": "EBL_000674",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 290.1,
+            "y": 3.0,
+            "width": 643.2,
+            "height": 717.0
+          }
+        },
+        {
+          "object-id": "EBL_a_000675",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 610.2,
+            "y": 467.4,
+            "width": 264.8,
+            "height": 252.6
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 2.5,
+      "end-time": 2.6,
+      "objects": [
+        {
+          "object-id": "EBL_control_000693",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 864.4,
+            "y": 20.4,
+            "width": 415.6,
+            "height": 674.7
+          }
+        },
+        {
+          "object-id": "EBL_b_000694",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 589.0,
+            "y": 5.4,
+            "width": 168.4,
+            "height": 350.2
+          }
+        },
+        {
+          "object-id": "EBL_000695",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 281.8,
+            "y": 1.1,
+            "width": 650.6,
+            "height": 718.9
+          }
+        },
+        {
+          "object-id": "EBL_a_000696",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 607.0,
+            "y": 475.1,
+            "width": 260.9,
+            "height": 244.9
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 2.6,
+      "end-time": 2.7,
+      "objects": [
+        {
+          "object-id": "EBL_control_000717",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 866.8,
+            "y": 18.6,
+            "width": 413.2,
+            "height": 680.9
+          }
+        },
+        {
+          "object-id": "EBL_b_000718",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 585.9,
+            "y": 5.2,
+            "width": 170.0,
+            "height": 348.1
+          }
+        },
+        {
+          "object-id": "EBL_a_000719",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 602.8,
+            "y": 471.5,
+            "width": 264.7,
+            "height": 248.5
+          }
+        },
+        {
+          "object-id": "EBL_000720",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 282.4,
+            "y": 2.8,
+            "width": 649.2,
+            "height": 717.2
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 2.7,
+      "end-time": 2.8,
+      "objects": [
+        {
+          "object-id": "EBL_control_000744",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 869.4,
+            "y": 18.7,
+            "width": 410.6,
+            "height": 688.1
+          }
+        },
+        {
+          "object-id": "EBL_a_000745",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 598.6,
+            "y": 507.1,
+            "width": 268.4,
+            "height": 212.9
+          }
+        },
+        {
+          "object-id": "EBL_b_000746",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 585.9,
+            "y": 5.3,
+            "width": 173.0,
+            "height": 347.2
+          }
+        },
+        {
+          "object-id": "EBL_000747",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 258.5,
+            "y": 0.0,
+            "width": 672.3,
+            "height": 720.0
+          }
+        },
+        {
+          "object-id": "EBE_control_000752",
+          "annotation": "EBE_control",
+          "infoURL": "/data/info/EBE_control.html",
+          "geometry": {
+            "x": 264.4,
+            "y": 4.2,
+            "width": 665.7,
+            "height": 715.8
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 2.8,
+      "end-time": 2.9,
+      "objects": [
+        {
+          "object-id": "EBL_control_000774",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 872.3,
+            "y": 16.5,
+            "width": 407.7,
+            "height": 695.1
+          }
+        },
+        {
+          "object-id": "EBL_a_000775",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 593.7,
+            "y": 470.5,
+            "width": 273.2,
+            "height": 249.3
+          }
+        },
+        {
+          "object-id": "EBL_b_000776",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 587.0,
+            "y": 4.9,
+            "width": 173.0,
+            "height": 347.1
+          }
+        },
+        {
+          "object-id": "EBL_000777",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 277.7,
+            "y": 2.8,
+            "width": 653.8,
+            "height": 717.2
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 2.9,
+      "end-time": 3.0,
+      "objects": [
+        {
+          "object-id": "EBL_control_000798",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 877.5,
+            "y": 17.2,
+            "width": 402.5,
+            "height": 699.4
+          }
+        },
+        {
+          "object-id": "EBL_b_000799",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 587.3,
+            "y": 4.1,
+            "width": 174.0,
+            "height": 348.4
+          }
+        },
+        {
+          "object-id": "EBL_a_000800",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 589.6,
+            "y": 489.6,
+            "width": 275.7,
+            "height": 230.3
+          }
+        },
+        {
+          "object-id": "EBL_000801",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 254.1,
+            "y": 2.0,
+            "width": 676.8,
+            "height": 718.0
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 3.0,
+      "end-time": 3.1,
+      "objects": [
+        {
+          "object-id": "EBL_control_000818",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 878.8,
+            "y": 17.3,
+            "width": 401.2,
+            "height": 699.1
+          }
+        },
+        {
+          "object-id": "EBL_b_000819",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 587.6,
+            "y": 3.2,
+            "width": 174.1,
+            "height": 348.6
+          }
+        },
+        {
+          "object-id": "EBL_000820",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 253.5,
+            "y": 1.1,
+            "width": 677.1,
+            "height": 718.9
+          }
+        },
+        {
+          "object-id": "EBL_a_000821",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 586.6,
+            "y": 475.0,
+            "width": 274.5,
+            "height": 245.0
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 3.1,
+      "end-time": 3.2,
+      "objects": [
+        {
+          "object-id": "EBL_control_000842",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 883.3,
+            "y": 16.1,
+            "width": 396.7,
+            "height": 700.8
+          }
+        },
+        {
+          "object-id": "EBL_a_000843",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 578.5,
+            "y": 470.7,
+            "width": 276.5,
+            "height": 249.3
+          }
+        },
+        {
+          "object-id": "EBL_b_000844",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 589.4,
+            "y": 1.2,
+            "width": 173.2,
+            "height": 348.3
+          }
+        },
+        {
+          "object-id": "EBL_000845",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 255.1,
+            "y": 0.0,
+            "width": 676.0,
+            "height": 720.0
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 3.2,
+      "end-time": 3.3,
+      "objects": [
+        {
+          "object-id": "EBL_control_000866",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 886.2,
+            "y": 16.4,
+            "width": 393.8,
+            "height": 702.4
+          }
+        },
+        {
+          "object-id": "EBL_a_000867",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 570.6,
+            "y": 483.8,
+            "width": 280.2,
+            "height": 236.2
+          }
+        },
+        {
+          "object-id": "EBL_b_000868",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 589.3,
+            "y": 0.7,
+            "width": 172.6,
+            "height": 345.7
+          }
+        },
+        {
+          "object-id": "EBL_000869",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 251.7,
+            "y": 0.0,
+            "width": 682.6,
+            "height": 720.0
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 3.3,
+      "end-time": 3.4,
+      "objects": [
+        {
+          "object-id": "EBL_control_000894",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 888.2,
+            "y": 14.6,
+            "width": 391.8,
+            "height": 703.7
+          }
+        },
+        {
+          "object-id": "EBL_a_000895",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 557.2,
+            "y": 463.6,
+            "width": 288.5,
+            "height": 256.4
+          }
+        },
+        {
+          "object-id": "EBL_b_000896",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 586.1,
+            "y": 0.8,
+            "width": 171.7,
+            "height": 344.3
+          }
+        },
+        {
+          "object-id": "EBL_000897",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 232.1,
+            "y": 0.0,
+            "width": 679.2,
+            "height": 719.8
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 3.4,
+      "end-time": 3.5,
+      "objects": [
+        {
+          "object-id": "EBL_control_000914",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 890.3,
+            "y": 14.0,
+            "width": 389.7,
+            "height": 704.7
+          }
+        },
+        {
+          "object-id": "EBL_a_000915",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 546.6,
+            "y": 464.9,
+            "width": 292.5,
+            "height": 255.1
+          }
+        },
+        {
+          "object-id": "EBL_000916",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 264.1,
+            "y": 0.0,
+            "width": 650.9,
+            "height": 720.0
+          }
+        },
+        {
+          "object-id": "EBL_b_000919",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 579.7,
+            "y": 0.0,
+            "width": 178.1,
+            "height": 343.1
+          }
+        },
+        {
+          "object-id": "EBE_control_000929",
+          "annotation": "EBE_control",
+          "infoURL": "/data/info/EBE_control.html",
+          "geometry": {
+            "x": 263.0,
+            "y": 0.5,
+            "width": 656.4,
+            "height": 719.5
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 3.5,
+      "end-time": 3.6,
+      "objects": [
+        {
+          "object-id": "EBL_control_000938",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 892.8,
+            "y": 12.7,
+            "width": 387.2,
+            "height": 705.7
+          }
+        },
+        {
+          "object-id": "EBL_a_000939",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 532.8,
+            "y": 463.9,
+            "width": 295.2,
+            "height": 256.1
+          }
+        },
+        {
+          "object-id": "EBL_000940",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 253.9,
+            "y": 0.0,
+            "width": 674.5,
+            "height": 720.0
+          }
+        },
+        {
+          "object-id": "EBL_b_000944",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 561.6,
+            "y": 0.2,
+            "width": 191.5,
+            "height": 343.7
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 3.6,
+      "end-time": 3.7,
+      "objects": [
+        {
+          "object-id": "EBL_control_000961",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 895.4,
+            "y": 9.9,
+            "width": 384.6,
+            "height": 708.8
+          }
+        },
+        {
+          "object-id": "EBL_a_000962",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 518.8,
+            "y": 463.0,
+            "width": 299.9,
+            "height": 257.0
+          }
+        },
+        {
+          "object-id": "EBL_b_000963",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 565.7,
+            "y": 0.1,
+            "width": 178.8,
+            "height": 341.4
+          }
+        },
+        {
+          "object-id": "EBL_000966",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 225.2,
+            "y": 0.1,
+            "width": 686.3,
+            "height": 719.6
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 3.7,
+      "end-time": 3.8,
+      "objects": [
+        {
+          "object-id": "EBL_control_000984",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 896.0,
+            "y": 9.8,
+            "width": 384.0,
+            "height": 709.1
+          }
+        },
+        {
+          "object-id": "EBL_a_000985",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 506.1,
+            "y": 461.8,
+            "width": 301.6,
+            "height": 258.2
+          }
+        },
+        {
+          "object-id": "EBL_000986",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 226.6,
+            "y": 0.3,
+            "width": 683.5,
+            "height": 719.7
+          }
+        },
+        {
+          "object-id": "EBL_b_000987",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 565.3,
+            "y": 0.1,
+            "width": 163.1,
+            "height": 344.0
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 3.8,
+      "end-time": 3.9,
+      "objects": [
+        {
+          "object-id": "EBL_control_001012",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 899.5,
+            "y": 8.5,
+            "width": 380.5,
+            "height": 711.2
+          }
+        },
+        {
+          "object-id": "EBL_a_001013",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 491.3,
+            "y": 464.3,
+            "width": 307.0,
+            "height": 255.7
+          }
+        },
+        {
+          "object-id": "EBL_001014",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 209.0,
+            "y": 0.0,
+            "width": 697.4,
+            "height": 720.0
+          }
+        },
+        {
+          "object-id": "EBL_b_001015",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 562.7,
+            "y": 1.6,
+            "width": 126.0,
+            "height": 343.0
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 3.9,
+      "end-time": 4.0,
+      "objects": [
+        {
+          "object-id": "EBL_control_001031",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 901.5,
+            "y": 8.4,
+            "width": 378.5,
+            "height": 711.6
+          }
+        },
+        {
+          "object-id": "EBL_a_001032",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 481.7,
+            "y": 462.8,
+            "width": 312.3,
+            "height": 257.2
+          }
+        },
+        {
+          "object-id": "EBL_b_001033",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 558.5,
+            "y": 1.1,
+            "width": 166.6,
+            "height": 344.2
+          }
+        },
+        {
+          "object-id": "EBL_001034",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 219.5,
+            "y": 0.0,
+            "width": 674.7,
+            "height": 720.0
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 4.0,
+      "end-time": 4.1,
+      "objects": [
+        {
+          "object-id": "EBL_control_001055",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 902.9,
+            "y": 8.7,
+            "width": 377.1,
+            "height": 711.3
+          }
+        },
+        {
+          "object-id": "EBL_a_001056",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 471.2,
+            "y": 470.2,
+            "width": 303.6,
+            "height": 249.8
+          }
+        },
+        {
+          "object-id": "EBL_001057",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 218.1,
+            "y": 0.0,
+            "width": 669.7,
+            "height": 720.0
+          }
+        },
+        {
+          "object-id": "EBL_b_001058",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 556.4,
+            "y": 1.0,
+            "width": 159.7,
+            "height": 346.9
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 4.1,
+      "end-time": 4.2,
+      "objects": [
+        {
+          "object-id": "EBL_001082",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 204.5,
+            "y": 0.0,
+            "width": 670.4,
+            "height": 720.0
+          }
+        },
+        {
+          "object-id": "EBL_a_001083",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 448.2,
+            "y": 472.1,
+            "width": 311.3,
+            "height": 247.9
+          }
+        },
+        {
+          "object-id": "EBL_b_001084",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 547.9,
+            "y": 1.1,
+            "width": 153.3,
+            "height": 348.7
+          }
+        },
+        {
+          "object-id": "EBL_control_001085",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 904.9,
+            "y": 9.0,
+            "width": 375.1,
+            "height": 711.0
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 4.2,
+      "end-time": 4.3,
+      "objects": [
+        {
+          "object-id": "EBL_b_001105",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 543.6,
+            "y": 0.9,
+            "width": 127.4,
+            "height": 352.5
+          }
+        },
+        {
+          "object-id": "EBL_001106",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 207.5,
+            "y": 0.0,
+            "width": 661.0,
+            "height": 720.0
+          }
+        },
+        {
+          "object-id": "EBL_a_001107",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 439.9,
+            "y": 475.1,
+            "width": 310.0,
+            "height": 244.9
+          }
+        },
+        {
+          "object-id": "EBL_control_001108",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 906.4,
+            "y": 8.7,
+            "width": 373.6,
+            "height": 711.3
+          }
+        }
+      ]
+    },
+    {
+      "start-time": 4.3,
+      "end-time": 4.4,
+      "objects": [
+        {
+          "object-id": "EBL_001138",
+          "annotation": "EBL",
+          "infoURL": "/data/info/EBL.html",
+          "geometry": {
+            "x": 204.5,
+            "y": 0.0,
+            "width": 662.0,
+            "height": 720.0
+          }
+        },
+        {
+          "object-id": "EBL_control_001139",
+          "annotation": "EBL_control",
+          "infoURL": "/data/info/EBL_control.html",
+          "geometry": {
+            "x": 909.9,
+            "y": 7.8,
+            "width": 369.5,
+            "height": 712.2
+          }
+        },
+        {
+          "object-id": "EBL_b_001140",
+          "annotation": "EBL_b",
+          "infoURL": "/data/info/EBL_b.html",
+          "geometry": {
+            "x": 540.7,
+            "y": 0.8,
+            "width": 130.0,
+            "height": 354.6
+          }
+        },
+        {
+          "object-id": "EBL_a_001141",
+          "annotation": "EBL_a",
+          "infoURL": "/data/info/EBL_a.html",
+          "geometry": {
+            "x": 427.0,
+            "y": 474.3,
+            "width": 304.3,
+            "height": 245.7
+          }
+        }
+      ]
+    }
+  ]
+}

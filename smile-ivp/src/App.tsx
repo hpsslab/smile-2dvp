@@ -18,6 +18,24 @@ function App() {
   const [popupTitle, setPopupTitle] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [scanIndex, setScanIndex] = useState(0);
+
+  useEffect(() => {
+  if (!roiData.frames.length) return;
+
+  const timer = setInterval(() => {
+    setScanIndex((prev) =>
+      prev < roiData.frames.length - 1 ? prev + 1 : 0
+    );
+  }, 100); // 10 fps
+
+  return () => clearInterval(timer);
+}, [roiData]);
+
+  useEffect(() => {
+  console.log("Scan index:", scanIndex);
+}, [scanIndex]);
+
 
   useEffect(() => {
     // Load the M3U playlist
@@ -37,7 +55,7 @@ function App() {
           
           // Load corresponding ROI file
           // const roiUrl = trimmedUrl.replace('.mp4', '.roi');
-          const roiUrl = "https://hpss.mines.edu/smile/smile.roi"
+          const roiUrl = "http://localhost:3000/data/test_clean.roi";
           console.log('Loading ROI file from:', roiUrl);
           
           fetch(roiUrl)

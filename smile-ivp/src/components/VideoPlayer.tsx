@@ -88,7 +88,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ url, roiData, onROIClick }) =
                 top: roi.geometry.y,
                 width: roi.geometry.width,
                 height: roi.geometry.height,
-                // border: '2px solid red',
+                border: '2px solid red',
                 pointerEvents: 'auto',
                 cursor: 'pointer'
               }}

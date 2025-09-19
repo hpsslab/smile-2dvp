@@ -20,7 +20,7 @@ export default function App() {
     });
 }, []);
 
-
+  const videoPath = `${import.meta.env.BASE_URL}videos/demo.mp4`;
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Header */}
@@ -38,7 +38,7 @@ export default function App() {
         ) : !roi ? (
           <div className="text-gray-500 animate-pulse">Loading ROI…</div>
         ) : (
-          <VideoOverlay videoSrc="/videos/demo.mp4" roi={roi} />
+          <VideoOverlay videoSrc={videoPath} roi={roi} />
         )}
       </main>
 

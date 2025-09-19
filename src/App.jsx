@@ -20,7 +20,7 @@ export default function App() {
     });
 }, []);
 
-  const videoPath = `${import.meta.env.BASE_URL}videos/demo.mp4`;
+  const videoPath = `${import.meta.env.BASE_URL}videos/demo-websafe.mp4`;
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Header */}

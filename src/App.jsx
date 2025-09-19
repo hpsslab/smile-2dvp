@@ -6,17 +6,20 @@ export default function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/ROI/demo.roi")
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.json();
-      })
-      .then(setRoi)
-      .catch((err) => {
-        console.error("Failed to load ROI:", err);
-        setError("Could not load ROI data.");
-      });
-  }, []);
+  const roiPath = `${import.meta.env.BASE_URL}ROI/demo.roi`;
+
+  fetch(roiPath)
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
+    .then(setRoi)
+    .catch((err) => { 
+      console.error("Failed to load ROI:", err);
+      setError("Could not load ROI data.");
+    });
+}, []);
+
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">

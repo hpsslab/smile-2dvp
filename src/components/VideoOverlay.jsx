@@ -9,7 +9,6 @@ export default function VideoOverlay({ videoSrc, roi }) {
   const [currentBoxes, setCurrentBoxes] = useState([]);
   const [selectedBox, setSelectedBox] = useState(null);
 
-  // Sort frames once for deterministic order
   const frames = roi.frames.sort((a, b) => a.t - b.t);
 
   useEffect(() => {
@@ -30,7 +29,6 @@ export default function VideoOverlay({ videoSrc, roi }) {
     return () => video.removeEventListener("timeupdate", handleTimeUpdate);
   }, [frames]);
 
-  // ✅ Fullscreen on container, not just video
   const handleFullscreen = () => {
     if (!document.fullscreenElement) {
       containerRef.current?.requestFullscreen();
@@ -54,25 +52,57 @@ export default function VideoOverlay({ videoSrc, roi }) {
       <div className="absolute inset-0 pointer-events-none">
         {currentBoxes.map((box, i) => {
           const [x, y, w, h] = box.bbox;
-          const color = getColorForClass(box.label_id); // ✅ distinct color per class
+          const color = getColorForClass(box.label_id);
+
+          // Focus heuristics
+          const centerX = x + w / 2;
+          const centerY = y + h / 2;
+          const isCentered =
+            centerX > 0.25 && centerX < 0.75 && centerY > 0.25 && centerY < 0.75;
+          const isSmallBox = w * h < 0.05; // <5% of frame area
+          const hasConfidence = box.score === undefined || box.score > 0.5;
+
+          // Block bottom-left/right controls only
+          const bottomEdge = y + h;
+          const rightEdge = x + w;
+          const isBottom = bottomEdge > 0.85; // bottom 15%
+          const isLeftSide = x < 0.15;
+          const isRightSide = rightEdge > 0.85;
+          const isBlockingControls = isBottom && (isLeftSide || isRightSide);
+
+          // Final focus decision
+          const isFocused =
+            (isCentered || isSmallBox) && hasConfidence && !isBlockingControls;
 
           return (
             <div
               key={i}
-              className="absolute rounded pointer-events-auto cursor-pointer"
+              className={`absolute rounded ${
+                isFocused
+                  ? "pointer-events-auto hover:scale-105 transition-transform duration-150 ease-out cursor-pointer"
+                  : "pointer-events-none opacity-60"
+              }`}
               style={{
                 left: `${x * 100}%`,
                 top: `${y * 100}%`,
                 width: `${w * 100}%`,
                 height: `${h * 100}%`,
                 border: `2px solid ${color}`,
-                backgroundColor: `${color}33`, // ~20% opacity fill
+                backgroundColor: `${color}${isFocused ? "33" : "15"}`,
               }}
-              onClick={() => setSelectedBox(box)}
+              onClick={() => {
+                if (isFocused) {
+                  videoRef.current?.pause();
+                  setSelectedBox(box);
+                }
+              }}
             >
               <span
                 className="absolute top-0 left-0 text-xs text-white px-1 rounded-br"
-                style={{ backgroundColor: color }}
+                style={{
+                  backgroundColor: color,
+                  opacity: isFocused ? 1 : 0.6,
+                }}
               >
                 {displayNames[box.label_id] || box.label_name}
               </span>

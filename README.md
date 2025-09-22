@@ -1,12 +1,51 @@
-# React + Vite
+# SMILE-2DVP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite frontend for visualizing and experimenting with SMILE-2DVP results.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js 18 or newer
+- npm (bundled with Node)
 
-## Expanding the ESLint configuration
+## Quick Start
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1) Clone the repo
+   git clone https://github.com/hpsslab/smile-2dvp.git
+   cd smile-2dvp
+
+2) Install dependencies
+   npm install
+
+3) Run the dev server
+   npm run dev
+   (open the URL printed in the terminal, usually http://localhost:5173)
+
+## Build and Local Preview
+
+- Build production assets
+  npm run build
+
+- Preview the production build locally
+  npm run preview
+  (open the URL printed in the terminal)
+
+## Project Structure
+
+smile-2dvp/
+├─ public/              (static assets)
+├─ src/                 (components, pages, hooks, utilities)
+├─ index.html           (app entry)
+├─ package.json         (scripts and dependencies)
+├─ vite.config.*        (Vite configuration)
+└─ tailwind.config.*    (Tailwind configuration if present)
+
+## Editing and Experimenting
+
+- All source code is under src
+- Start the dev server, edit files in src, save changes, and the app hot reloads
+- If you change dependencies, re-run npm install if needed
+
+## Notes
+
+- If the dev server port is busy, Vite will prompt for a new port
+- If Node is older than 18, upgrade Node to avoid build errors

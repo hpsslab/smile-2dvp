@@ -31,6 +31,7 @@ React + Vite frontend for visualizing and experimenting with SMILE-2DVP results.
 
 ## Project Structure
 
+```text
 smile-2dvp/
 ├─ public/              (static assets)
 ├─ src/                 (components, pages, hooks, utilities)
@@ -38,6 +39,7 @@ smile-2dvp/
 ├─ package.json         (scripts and dependencies)
 ├─ vite.config.*        (Vite configuration)
 └─ tailwind.config.*    (Tailwind configuration if present)
+```
 
 ## Editing and Experimenting
 

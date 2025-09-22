@@ -9,24 +9,53 @@ export default function VideoOverlay({ videoSrc, roi }) {
   const [currentBoxes, setCurrentBoxes] = useState([]);
   const [selectedBox, setSelectedBox] = useState(null);
 
+  // Sort frames once for deterministic order
   const frames = roi.frames.sort((a, b) => a.t - b.t);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    const handleTimeUpdate = () => {
+    let animationFrameId;
+    const update = () => {
       const t = video.currentTime;
       let frame = frames[0];
       for (let i = 0; i < frames.length; i++) {
         if (frames[i].t > t) break;
         frame = frames[i];
       }
-      setCurrentBoxes(frame.boxes || []);
+
+      // ✅ Blend currentBoxes with new frame for smoother motion
+      setCurrentBoxes(prevBoxes => {
+        const prevMap = new Map(
+          prevBoxes.map(b => [b.track_id ?? b.label_id, b])
+        );
+
+        return (frame.boxes || []).map(b => {
+          const key = b.track_id ?? b.label_id;
+          const prev = prevMap.get(key);
+          if (prev) {
+            const [px, py, pw, ph] = prev.bbox;
+            const [nx, ny, nw, nh] = b.bbox;
+            return {
+              ...b,
+              bbox: [
+                px * 0.4 + nx * 0.6, // Weighted average for smooth transition
+                py * 0.4 + ny * 0.6,
+                pw * 0.4 + nw * 0.6,
+                ph * 0.4 + nh * 0.6,
+              ]
+            };
+          }
+          return b;
+        });
+      });
+
+      animationFrameId = requestAnimationFrame(update);
     };
 
-    video.addEventListener("timeupdate", handleTimeUpdate);
-    return () => video.removeEventListener("timeupdate", handleTimeUpdate);
+    animationFrameId = requestAnimationFrame(update);
+    return () => cancelAnimationFrame(animationFrameId);
   }, [frames]);
 
   const handleFullscreen = () => {
@@ -59,24 +88,23 @@ export default function VideoOverlay({ videoSrc, roi }) {
           const centerY = y + h / 2;
           const isCentered =
             centerX > 0.25 && centerX < 0.75 && centerY > 0.25 && centerY < 0.75;
-          const isSmallBox = w * h < 0.05; // <5% of frame area
+          const isSmallBox = w * h < 0.05;
           const hasConfidence = box.score === undefined || box.score > 0.5;
 
           // Block bottom-left/right controls only
           const bottomEdge = y + h;
           const rightEdge = x + w;
-          const isBottom = bottomEdge > 0.85; // bottom 15%
+          const isBottom = bottomEdge > 0.85;
           const isLeftSide = x < 0.15;
           const isRightSide = rightEdge > 0.85;
           const isBlockingControls = isBottom && (isLeftSide || isRightSide);
 
-          // Final focus decision
           const isFocused =
             (isCentered || isSmallBox) && hasConfidence && !isBlockingControls;
 
           return (
             <div
-              key={i}
+              key={box.track_id ?? `${box.label_id}-${i}`}
               className={`absolute rounded ${
                 isFocused
                   ? "pointer-events-auto hover:scale-105 transition-transform duration-150 ease-out cursor-pointer"

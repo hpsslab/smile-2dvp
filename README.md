@@ -51,3 +51,6 @@ smile-2dvp/
 
 - If the dev server port is busy, Vite will prompt for a new port
 - If Node is older than 18, upgrade Node to avoid build errors
+
+## Links
+- Live Demo: https://splendid-dasik-2d260d.netlify.app/

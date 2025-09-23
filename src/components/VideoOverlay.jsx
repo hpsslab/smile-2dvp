@@ -3,6 +3,8 @@ import Modal from "./Modal";
 import { getColorForClass } from "../utils/classColors";
 import { displayNames } from "../utils/displayNames";
 
+const BOX_HOLD_DURATION = 0.2; // seconds to keep stale boxes visible
+
 export default function VideoOverlay({ videoSrc, roi }) {
   const containerRef = useRef(null);
   const videoRef = useRef(null);
@@ -25,30 +27,38 @@ export default function VideoOverlay({ videoSrc, roi }) {
         frame = frames[i];
       }
 
-      // ✅ Blend currentBoxes with new frame for smoother motion
+      const now = video.currentTime;
+
       setCurrentBoxes(prevBoxes => {
         const prevMap = new Map(
           prevBoxes.map(b => [b.track_id ?? b.label_id, b])
         );
 
-        return (frame.boxes || []).map(b => {
-          const key = b.track_id ?? b.label_id;
+        const nextBoxes = [];
+
+        for (const box of frame.boxes || []) {
+          const key = box.track_id ?? box.label_id;
           const prev = prevMap.get(key);
-          if (prev) {
-            const [px, py, pw, ph] = prev.bbox;
-            const [nx, ny, nw, nh] = b.bbox;
-            return {
-              ...b,
-              bbox: [
-                px * 0.4 + nx * 0.6, // Weighted average for smooth transition
-                py * 0.4 + ny * 0.6,
-                pw * 0.4 + nw * 0.6,
-                ph * 0.4 + nh * 0.6,
-              ]
-            };
+          const lastSeen = now;
+
+          nextBoxes.push({
+            ...box,
+            lastSeen,
+            // preserve any additional fields we may have added earlier
+            ...(prev ? { ...prev, ...box, lastSeen } : {}),
+          });
+
+          prevMap.delete(key);
+        }
+
+        prevMap.forEach(prev => {
+          const lastSeen = prev.lastSeen ?? now;
+          if (now - lastSeen <= BOX_HOLD_DURATION) {
+            nextBoxes.push({ ...prev, lastSeen });
           }
-          return b;
         });
+
+        return nextBoxes;
       });
 
       animationFrameId = requestAnimationFrame(update);
@@ -82,6 +92,11 @@ export default function VideoOverlay({ videoSrc, roi }) {
         {currentBoxes.map((box, i) => {
           const [x, y, w, h] = box.bbox;
           const color = getColorForClass(box.label_id);
+          const timeSinceSeen = Math.max(
+            0,
+            (videoRef.current?.currentTime ?? 0) - (box.lastSeen ?? 0)
+          );
+          const staleProgress = Math.min(1, timeSinceSeen / BOX_HOLD_DURATION);
 
           // Focus heuristics
           const centerX = x + w / 2;
@@ -116,6 +131,7 @@ export default function VideoOverlay({ videoSrc, roi }) {
                 width: `${w * 100}%`,
                 height: `${h * 100}%`,
                 border: `2px solid ${color}`,
+                opacity: isFocused ? 1 - staleProgress * 0.5 : 0.6 - staleProgress * 0.3,
                 backgroundColor: `${color}${isFocused ? "33" : "15"}`,
               }}
               onClick={() => {

@@ -4,12 +4,14 @@ import { getColorForClass } from "../utils/classColors";
 import { displayNames } from "../utils/displayNames";
 
 const BOX_HOLD_DURATION = 0.2; // seconds to keep stale boxes visible
+const CONTROL_ZONE_RATIO = 0.12; // bottom portion reserved for native player controls
 
 export default function VideoOverlay({ videoSrc, roi }) {
   const containerRef = useRef(null);
   const videoRef = useRef(null);
   const [currentBoxes, setCurrentBoxes] = useState([]);
   const [selectedBox, setSelectedBox] = useState(null);
+  const [hoveredBoxId, setHoveredBoxId] = useState(null);
 
   // Sort frames once for deterministic order
   const frames = roi.frames.sort((a, b) => a.t - b.t);
@@ -19,6 +21,7 @@ export default function VideoOverlay({ videoSrc, roi }) {
     if (!video) return;
 
     let animationFrameId;
+    let previousTime = video.currentTime ?? 0;
     const update = () => {
       const t = video.currentTime;
       let frame = frames[0];
@@ -28,8 +31,17 @@ export default function VideoOverlay({ videoSrc, roi }) {
       }
 
       const now = video.currentTime;
+      const isSeeking = video.seeking || Math.abs(now - previousTime) > 0.1;
+      previousTime = now;
 
       setCurrentBoxes(prevBoxes => {
+        if (isSeeking) {
+          return (frame.boxes || []).map(box => ({
+            ...box,
+            lastSeen: now,
+          }));
+        }
+
         const prevMap = new Map(
           prevBoxes.map(b => [b.track_id ?? b.label_id, b])
         );
@@ -53,7 +65,7 @@ export default function VideoOverlay({ videoSrc, roi }) {
 
         prevMap.forEach(prev => {
           const lastSeen = prev.lastSeen ?? now;
-          if (now - lastSeen <= BOX_HOLD_DURATION) {
+          if (lastSeen <= now && now - lastSeen <= BOX_HOLD_DURATION) {
             nextBoxes.push({ ...prev, lastSeen });
           }
         });
@@ -92,6 +104,7 @@ export default function VideoOverlay({ videoSrc, roi }) {
         {currentBoxes.map((box, i) => {
           const [x, y, w, h] = box.bbox;
           const color = getColorForClass(box.label_id);
+          const confidence = box.conf ?? box.score;
           const timeSinceSeen = Math.max(
             0,
             (videoRef.current?.currentTime ?? 0) - (box.lastSeen ?? 0)
@@ -104,7 +117,7 @@ export default function VideoOverlay({ videoSrc, roi }) {
           const isCentered =
             centerX > 0.25 && centerX < 0.75 && centerY > 0.25 && centerY < 0.75;
           const isSmallBox = w * h < 0.05;
-          const hasConfidence = box.score === undefined || box.score > 0.5;
+          const hasConfidence = confidence === undefined || confidence > 0.5;
 
           // Block bottom-left/right controls only
           const bottomEdge = y + h;
@@ -117,14 +130,22 @@ export default function VideoOverlay({ videoSrc, roi }) {
           const isFocused =
             (isCentered || isSmallBox) && hasConfidence && !isBlockingControls;
 
+          const controlTopBoundary = 1 - CONTROL_ZONE_RATIO;
+          const overlapDepth = Math.max(0, bottomEdge - controlTopBoundary);
+          const overlapRatio = h > 0 ? Math.min(1, overlapDepth / h) : 0;
+          const interactiveBottomPercent = overlapRatio * 100;
+          const hasInteractiveRegion = isFocused && overlapRatio < 1;
+
+          const boxKey = box.track_id ?? `${box.label_id}-${i}`;
+
           return (
             <div
-              key={box.track_id ?? `${box.label_id}-${i}`}
+              key={boxKey}
               className={`absolute rounded ${
                 isFocused
-                  ? "pointer-events-auto hover:scale-105 transition-transform duration-150 ease-out cursor-pointer"
-                  : "pointer-events-none opacity-60"
-              }`}
+                  ? "transition-transform duration-150 ease-out"
+                  : "opacity-60"
+              } pointer-events-none`}
               style={{
                 left: `${x * 100}%`,
                 top: `${y * 100}%`,
@@ -133,19 +154,43 @@ export default function VideoOverlay({ videoSrc, roi }) {
                 border: `2px solid ${color}`,
                 opacity: isFocused ? 1 - staleProgress * 0.5 : 0.6 - staleProgress * 0.3,
                 backgroundColor: `${color}${isFocused ? "33" : "15"}`,
-              }}
-              onClick={() => {
-                if (isFocused) {
-                  videoRef.current?.pause();
-                  setSelectedBox(box);
-                }
+                transform:
+                  isFocused && hoveredBoxId === boxKey ? "scale(1.05)" : "scale(1)",
+                transformOrigin: "center",
               }}
             >
+              {hasInteractiveRegion && (
+                <div
+                  className="absolute inset-x-0 top-0 pointer-events-auto hover:scale-105 focus-visible:scale-105 focus-visible:outline-none cursor-pointer"
+                  style={{
+                    bottom: `${interactiveBottomPercent}%`,
+                    borderRadius: "inherit",
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  onMouseEnter={() => setHoveredBoxId(boxKey)}
+                  onMouseLeave={() => setHoveredBoxId(null)}
+                  onFocus={() => setHoveredBoxId(boxKey)}
+                  onBlur={() => setHoveredBoxId(null)}
+                  onClick={() => {
+                    videoRef.current?.pause();
+                    setSelectedBox(box);
+                  }}
+                  onKeyDown={event => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      videoRef.current?.pause();
+                      setSelectedBox(box);
+                    }
+                  }}
+                />
+              )}
               <span
                 className="absolute top-0 left-0 text-xs text-white px-1 rounded-br"
                 style={{
                   backgroundColor: color,
                   opacity: isFocused ? 1 : 0.6,
+                  pointerEvents: "none",
                 }}
               >
                 {displayNames[box.label_id] || box.label_name}

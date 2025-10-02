@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 import Modal from "./Modal";
 import { getColorForClass } from "../utils/classColors";
 import { displayNames } from "../utils/displayNames";
@@ -12,6 +12,11 @@ export default function VideoOverlay({ videoSrc, roi }) {
   const [currentBoxes, setCurrentBoxes] = useState([]);
   const [selectedBox, setSelectedBox] = useState(null);
   const [hoveredBoxId, setHoveredBoxId] = useState(null);
+  const [descriptionMapping, setDescriptionMapping] = useState(null);
+  const [mappingError, setMappingError] = useState(null);
+  const [descriptionStatus, setDescriptionStatus] = useState("idle");
+  const [descriptionHtml, setDescriptionHtml] = useState("");
+  const latestFetchRef = useRef(0);
 
   // Sort frames once for deterministic order
   const frames = roi.frames.sort((a, b) => a.t - b.t);
@@ -79,6 +84,228 @@ export default function VideoOverlay({ videoSrc, roi }) {
     animationFrameId = requestAnimationFrame(update);
     return () => cancelAnimationFrame(animationFrameId);
   }, [frames]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+
+    let cancelled = false;
+    const baseUrl = new URL(import.meta.env.BASE_URL || "/", window.location.origin);
+    const mappingUrl = new URL("./descriptions/mapping.json", baseUrl).toString();
+
+    fetch(mappingUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to load description mapping (${response.status})`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (!cancelled) {
+          setDescriptionMapping(data);
+        }
+      })
+      .catch(error => {
+        if (cancelled) return;
+        console.error("Failed to load description mapping", error);
+        setMappingError(error);
+        setDescriptionMapping({});
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const mappingLookup = useMemo(() => {
+    if (!descriptionMapping) return null;
+    const lookup = {};
+    Object.entries(descriptionMapping).forEach(([key, value]) => {
+      if (!key || !value) return;
+      const trimmed = key.trim();
+      if (!trimmed) return;
+      const variants = new Set([
+        trimmed,
+        trimmed.toLowerCase(),
+        trimmed.replace(/\s+/g, '_'),
+        trimmed.replace(/\s+/g, '-'),
+        trimmed.replace(/[^a-z0-9]+/gi, '_').toLowerCase(),
+      ]);
+      variants.forEach(variant => {
+        if (variant) {
+          lookup[variant] = value;
+        }
+      });
+    });
+    return lookup;
+  }, [descriptionMapping]);
+
+  const getBoxLabel = box => {
+    if (!box) return "";
+    return (
+      displayNames[box.label_id] ||
+      box.label_name ||
+      (typeof box.label_id === "number" ? `Label ${box.label_id}` : "Object")
+    );
+  };
+
+  const normalizeHtmlContent = (html, htmlPath) => {
+    if (typeof window === "undefined") {
+      return html;
+    }
+
+    try {
+      const baseUrl = new URL(htmlPath, window.location.origin);
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, "text/html");
+
+      const processAttribute = (element, attribute) => {
+        const value = element.getAttribute(attribute);
+        if (!value) return;
+
+        if (attribute === "srcset") {
+          const rewritten = value
+            .split(",")
+            .map(part => part.trim())
+            .filter(Boolean)
+            .map(part => {
+              const [urlPart, descriptor] = part.split(/\s+/, 2);
+              if (!urlPart) return null;
+              try {
+                const resolved = new URL(urlPart, baseUrl).toString();
+                return descriptor ? `${resolved} ${descriptor}` : resolved;
+              } catch (error) {
+                console.warn("Failed to resolve srcset part", urlPart, error);
+                return null;
+              }
+            })
+            .filter(Boolean);
+
+          if (rewritten.length > 0) {
+            element.setAttribute(attribute, rewritten.join(", "));
+          }
+          return;
+        }
+
+        try {
+          element.setAttribute(attribute, new URL(value, baseUrl).toString());
+        } catch (error) {
+          console.warn("Failed to resolve asset attribute", attribute, value, error);
+        }
+      };
+
+      doc.querySelectorAll("[src], [srcset], [href]").forEach(node => {
+        if (node.hasAttribute("src")) {
+          processAttribute(node, "src");
+        }
+        if (node.hasAttribute("srcset")) {
+          processAttribute(node, "srcset");
+        }
+        if (node.hasAttribute("href")) {
+          processAttribute(node, "href");
+        }
+      });
+
+      const article = doc.querySelector("article");
+      if (article) {
+        return article.outerHTML;
+      }
+
+      return doc.body.innerHTML || html;
+    } catch (error) {
+      console.error("Failed to normalize description HTML", error);
+      return html;
+    }
+  };
+
+
+  useEffect(() => {
+    if (!selectedBox) {
+      setDescriptionHtml("");
+      setDescriptionStatus("idle");
+      return;
+    }
+
+    if (!mappingLookup || Object.keys(mappingLookup).length === 0) {
+      setDescriptionHtml("");
+      setDescriptionStatus(mappingError ? "error" : "loading");
+      return;
+    }
+
+    const candidates = new Set();
+    if (selectedBox.label_name) {
+      candidates.add(selectedBox.label_name);
+    }
+    if (
+      Number.isFinite(selectedBox.label_id) &&
+      displayNames[selectedBox.label_id]
+    ) {
+      candidates.add(displayNames[selectedBox.label_id]);
+    }
+
+    const keysToTry = Array.from(candidates).flatMap(name => {
+      if (!name) return [];
+      const trimmed = name.trim();
+      if (!trimmed) return [];
+      return [
+        trimmed,
+        trimmed.toLowerCase(),
+        trimmed.replace(/\s+/g, '_'),
+        trimmed.replace(/\s+/g, '-'),
+        trimmed.replace(/[^a-z0-9]+/gi, '_').toLowerCase(),
+      ];
+    });
+
+    const htmlPath = keysToTry.map(key => mappingLookup[key]).find(Boolean) || null;
+
+    if (!htmlPath) {
+      setDescriptionHtml("");
+      setDescriptionStatus("missing");
+      return;
+    }
+
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const baseUrl = new URL(import.meta.env.BASE_URL || "/", window.location.origin);
+    const resolvedHtmlUrl = new URL(htmlPath, baseUrl).toString();
+
+    const controller = new AbortController();
+    const requestId = latestFetchRef.current + 1;
+    latestFetchRef.current = requestId;
+    setDescriptionStatus("loading");
+
+    fetch(resolvedHtmlUrl, { signal: controller.signal })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to load description (${response.status})`);
+        }
+        return response.text();
+      })
+      .then(html => {
+        if (latestFetchRef.current !== requestId) {
+          return;
+        }
+        const normalized = normalizeHtmlContent(html, resolvedHtmlUrl);
+        setDescriptionHtml(normalized);
+        setDescriptionStatus("ready");
+      })
+      .catch(error => {
+        if (controller.signal.aborted) {
+          return;
+        }
+        console.error("Failed to load description content", error);
+        if (latestFetchRef.current !== requestId) {
+          return;
+        }
+        setDescriptionHtml("");
+        setDescriptionStatus("error");
+      });
+
+    return () => {
+      controller.abort();
+    };
+  }, [selectedBox, mappingLookup, mappingError]);
 
   const handleFullscreen = () => {
     if (!document.fullscreenElement) {
@@ -212,10 +439,36 @@ export default function VideoOverlay({ videoSrc, roi }) {
       <Modal
         isOpen={!!selectedBox}
         onClose={() => setSelectedBox(null)}
-        title={selectedBox?.label_name || ""}
+        title={selectedBox ? getBoxLabel(selectedBox) : ""}
       >
-        <h1 className="text-lg font-semibold">{selectedBox?.label_name}</h1>
-        <p className="mt-2">This will show description.html in the future.</p>
+        <div className="space-y-6">
+          <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-slate-100 p-6 shadow-inner">
+            {descriptionStatus === "loading" && (
+              <div className="flex items-center gap-3 text-sm font-medium text-slate-600">
+                <span className="h-4 w-4 animate-spin rounded-full border-2 border-slate-300 border-t-slate-500" />
+                Loading description...
+              </div>
+            )}
+            {descriptionStatus === "ready" && (
+              <div className="smile-description-surface">
+                <div
+                  className="prose prose-slate max-w-none smile-description-html"
+                  dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+                />
+              </div>
+            )}
+            {descriptionStatus === "missing" && (
+              <div className="rounded-xl border border-dashed border-slate-300 bg-white/70 p-4 text-sm text-slate-500">
+                No description available for this object yet.
+              </div>
+            )}
+            {descriptionStatus === "error" && (
+              <div className="rounded-xl border border-red-200 bg-red-50/90 p-4 text-sm text-red-700">
+                Unable to load the description right now. Please try again.
+              </div>
+            )}
+          </div>
+        </div>
       </Modal>
     </div>
   );

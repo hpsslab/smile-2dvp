@@ -22,3 +22,34 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Runtime environment files
+.env
+.env.*
+!.env.example
+
+# Build/test artefacts
+.eslintcache
+.stylelintcache
+.tsbuildinfo
+.turbo
+coverage
+coverage-*
+playwright-report
+test-results
+cypress/screenshots
+cypress/videos
+cypress/downloads
+.vite
+.vite-inspect
+
+# Keys / certificates
+*.pem
+*.key
+*.crt
+*.cer
+*.pfx
+*.p12
+
+# Local assets
+refs.zip

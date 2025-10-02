@@ -1,3 +1,69 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .smile-description-surface {
+    @apply rounded-2xl bg-white/95 p-5 shadow-lg ring-1 ring-slate-200;
+  }
+
+  .smile-description-html .smile-description {
+    @apply flex flex-col gap-6;
+  }
+
+  .smile-description-html .smile-description__header {
+    @apply border-b border-slate-200 pb-2;
+  }
+
+  .smile-description-html .smile-description__header h1 {
+    @apply text-2xl font-semibold text-slate-900;
+  }
+
+  .smile-description-html .smile-description__content {
+    @apply space-y-6 text-slate-700 leading-relaxed;
+    display: flow-root;
+  }
+
+  .smile-description-html .smile-description__media {
+    @apply rounded-2xl bg-white shadow-md ring-1 ring-slate-200/70;
+    width: min(18rem, 100%);
+    margin: 0 auto 1.25rem;
+  }
+
+  .smile-description-html .smile-description__media img {
+    @apply rounded-2xl;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: min(20rem, 65vh);
+  }
+
+  .smile-description-html li {
+    display: flow-root;
+  }
+
+  @media (min-width: 768px) {
+    .smile-description-html .smile-description__content > .smile-description__media {
+      float: right;
+      width: min(20rem, 26vw);
+      margin: 0 0 1.5rem 2rem;
+    }
+  }
+
+  .smile-description-html ul {
+    @apply list-disc space-y-2 pl-6;
+  }
+
+  .smile-description-html ol {
+    @apply list-decimal space-y-2 pl-6;
+  }
+
+  .smile-description-html table.smile-description__table {
+    @apply w-full overflow-hidden rounded-xl border border-slate-200 text-sm;
+  }
+
+  .smile-description-html table.smile-description__table td,
+  .smile-description-html table.smile-description__table th {
+    @apply border border-slate-200/80 px-3 py-2 align-top;
+  }
+}

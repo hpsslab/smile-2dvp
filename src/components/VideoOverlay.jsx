@@ -6,9 +6,10 @@ import { displayNames } from "../utils/displayNames";
 const BOX_HOLD_DURATION = 0.2; // seconds to keep stale boxes visible
 const CONTROL_ZONE_RATIO = 0.12; // bottom portion reserved for native player controls
 
-export default function VideoOverlay({ videoSrc, roi }) {
+export default function VideoOverlay({ videoSrc, roi, audioSrc }) {
   const containerRef = useRef(null);
   const videoRef = useRef(null);
+  const audioRef = useRef(null);
   const [currentBoxes, setCurrentBoxes] = useState([]);
   const [selectedBox, setSelectedBox] = useState(null);
   const [hoveredBoxId, setHoveredBoxId] = useState(null);
@@ -84,6 +85,101 @@ export default function VideoOverlay({ videoSrc, roi }) {
     animationFrameId = requestAnimationFrame(update);
     return () => cancelAnimationFrame(animationFrameId);
   }, [frames]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const shouldMute = Boolean(audioSrc);
+    video.muted = shouldMute;
+    video.defaultMuted = shouldMute;
+  }, [audioSrc, videoSrc]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const audio = audioRef.current;
+
+    if (!video || !audio || !audioSrc) {
+      if (audio) {
+        audio.pause();
+      }
+      return undefined;
+    }
+
+    const syncAudioTime = () => {
+      if (!audioSrc) return;
+      const videoTime = video.currentTime ?? 0;
+      const duration = audio.duration;
+
+      if (Number.isFinite(duration) && duration > 0) {
+        const target = videoTime % duration;
+        const diff = Math.abs((audio.currentTime ?? 0) - target);
+        if (diff > 0.3) {
+          try {
+            audio.currentTime = target;
+          } catch (error) {
+            // Ignore if we cannot adjust yet (metadata not loaded)
+          }
+        }
+      } else {
+        try {
+          audio.currentTime = videoTime;
+        } catch (error) {
+          // Ignore while metadata loads
+        }
+      }
+    };
+
+    const handlePlay = () => {
+      syncAudioTime();
+      const playPromise = audio.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(() => {
+          // Autoplay might be blocked until user interacts
+        });
+      }
+    };
+
+    const handlePause = () => {
+      audio.pause();
+    };
+
+    const handleSeek = () => {
+      syncAudioTime();
+    };
+
+    const handleRateChange = () => {
+      audio.playbackRate = video.playbackRate || 1;
+      syncAudioTime();
+    };
+
+    const handleTimeUpdate = () => {
+      syncAudioTime();
+    };
+
+    audio.loop = true;
+    audio.preload = "auto";
+    audio.playbackRate = video.playbackRate || 1;
+    audio.muted = false;
+    audio.volume = 1;
+
+    video.addEventListener("play", handlePlay);
+    video.addEventListener("pause", handlePause);
+    video.addEventListener("seeking", handleSeek);
+    video.addEventListener("seeked", handleSeek);
+    video.addEventListener("ratechange", handleRateChange);
+    video.addEventListener("timeupdate", handleTimeUpdate);
+
+    return () => {
+      video.removeEventListener("play", handlePlay);
+      video.removeEventListener("pause", handlePause);
+      video.removeEventListener("seeking", handleSeek);
+      video.removeEventListener("seeked", handleSeek);
+      video.removeEventListener("ratechange", handleRateChange);
+      video.removeEventListener("timeupdate", handleTimeUpdate);
+      audio.pause();
+    };
+  }, [audioSrc, videoSrc]);
 
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
@@ -324,7 +420,19 @@ export default function VideoOverlay({ videoSrc, roi }) {
         controls
         controlsList="nofullscreen"
         className="w-full rounded-lg shadow"
+        muted={Boolean(audioSrc)}
+        playsInline
       />
+
+      {audioSrc ? (
+        <audio
+          ref={audioRef}
+          src={audioSrc}
+          loop
+          preload="auto"
+          className="hidden"
+        />
+      ) : null}
 
       {/* Overlay */}
       <div className="absolute inset-0 pointer-events-none">

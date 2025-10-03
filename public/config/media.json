@@ -1,0 +1,23 @@
+{
+  "activeSet": "demo20251003",
+  "sets": {
+    "demo": {
+      "video": "videos/demo-websafe-compressed.mp4",
+      "roi": "ROI/demo.roi",
+      "audio": "music/tech-nature-no-copyright-music-413566.mp3",
+      "description": "Default lightweight demo clip"
+    },
+    "highRes": {
+      "video": "videos/demo-20251003-720p.mp4",
+      "roi": "ROI/demo_921.roi",
+      "audio": "music/tech-nature-no-copyright-music-413566.mp3",
+      "description": "Alternate high-resolution capture"
+    },
+    "demo20251003": {
+      "video": "videos/demo-20251003-720p.mp4",
+      "roi": "ROI/demo-20251003.roi",
+      "audio": "music/tech-nature-no-copyright-music-413566.mp3",
+      "description": "Latest ROI capture for Oct 2025 sample"
+    }
+  }
+}

@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import VideoOverlay from "./components/VideoOverlay";
 
 const DEFAULT_MEDIA = {
-  video: "videos/demo-websafe-compressed.mp4",
+  video: "videos/cleanroom-tour-720p.mp4",
   roi: "ROI/demo.roi",
-  audio: "music/tech-nature-no-copyright-music-413566.mp3",
 };
 
 const ensureTrailingSlash = value => {

@@ -419,6 +419,7 @@ export default function VideoOverlay({ videoSrc, roi, audioSrc }) {
         src={videoSrc}
         controls
         controlsList="nofullscreen"
+        loop
         className="w-full rounded-lg shadow"
         muted={Boolean(audioSrc)}
         playsInline

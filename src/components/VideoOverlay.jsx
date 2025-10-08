@@ -2,6 +2,7 @@ import { useRef, useState, useEffect, useMemo } from "react";
 import Modal from "./Modal";
 import { getColorForClass } from "../utils/classColors";
 import { displayNames } from "../utils/displayNames";
+import { VIDEO_ZOOM_SCALE } from "../config";
 
 const BOX_HOLD_DURATION = 0.2; // seconds to keep stale boxes visible
 const CONTROL_ZONE_RATIO = 0.12; // bottom portion reserved for native player controls
@@ -235,6 +236,9 @@ export default function VideoOverlay({ videoSrc, roi, audioSrc }) {
     return lookup;
   }, [descriptionMapping]);
 
+  const videoWidth = roi?.video?.width ?? 1280;
+  const scaledWidth = videoWidth * VIDEO_ZOOM_SCALE;
+
   const getBoxLabel = box => {
     if (!box) return "";
     return (
@@ -412,7 +416,11 @@ export default function VideoOverlay({ videoSrc, roi, audioSrc }) {
   };
 
   return (
-    <div ref={containerRef} className="relative w-full max-w-4xl mx-auto">
+    <div
+      ref={containerRef}
+      className="relative w-full mx-auto"
+      style={{ maxWidth: `${scaledWidth}px` }}
+    >
       {/* Video */}
       <video
         ref={videoRef}

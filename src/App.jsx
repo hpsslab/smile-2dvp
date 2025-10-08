@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import VideoOverlay from "./components/VideoOverlay";
+import { VIDEO_ZOOM_SCALE } from "./config";
 
 const DEFAULT_MEDIA = {
   video: "videos/cleanroom-tour-720p.mp4",
@@ -155,18 +156,26 @@ export default function App() {
 
   const videoPath = mediaSelection ? toPublicUrl(mediaSelection.video) : null;
   const audioPath = mediaSelection?.audio ? toPublicUrl(mediaSelection.audio) : null;
+  const videoWidth = roi?.video?.width ?? 1280;
+  const contentWidth = videoWidth * VIDEO_ZOOM_SCALE;
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <header className="bg-white shadow-sm">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div
+          className="mx-auto px-4 py-4 flex justify-between items-center"
+          style={{ maxWidth: `${contentWidth}px` }}
+        >
           <h1 className="text-xl font-bold text-gray-800">SMILE-IVP Demo</h1>
           <span className="text-gray-500 text-sm">Prototype v0.1</span>
         </div>
       </header>
 
       <main className="flex-1 flex justify-center items-center p-6">
-        <div className="flex flex-col items-center gap-4 w-full">
+        <div
+          className="flex flex-col items-center gap-4 w-full mx-auto"
+          style={{ maxWidth: `${contentWidth}px` }}
+        >
           {configError ? (
             <div className="text-yellow-600 text-sm text-center">{configError}</div>
           ) : null}
